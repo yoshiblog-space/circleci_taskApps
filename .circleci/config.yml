@@ -2,7 +2,7 @@ executors:
   default:
     docker:
       - image: cimg/node:lts
-    working_directory: ~/repo
+    working_directory: ~/project/vuetask3/
 
 version: 2
 jobs:
