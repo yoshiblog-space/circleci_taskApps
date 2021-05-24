@@ -19,7 +19,6 @@ jobs:
      steps:
       - checkout
       - run:
-          working_directory: vuetask3/
           command: npm run test:unit
 
 
