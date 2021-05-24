@@ -4,7 +4,7 @@ executors:
       - image: cimg/node:lts
     working_directory: ~/project/vuetask3/
 
-version: 2
+version: 2.1
 jobs:
   setup:
     executor: default
@@ -24,7 +24,7 @@ jobs:
 
 
 workflows:
-  version: 2
+  version: 2.1
   build_test:
     jobs:
       - setup:
