@@ -14,9 +14,9 @@ jobs:
           working_directory: vuetask3
           command: npm install
       - persist_to_workspace:
-          root: ./vuetask3/
+          root: .
           paths:
-            - node_modules
+            - .
 
   test:
      executor: default
@@ -25,6 +25,7 @@ jobs:
       - attach_workspace:
          at: .
       - run:
+           working_directory: vuetask3
            command: npm run test:unit
 
 
