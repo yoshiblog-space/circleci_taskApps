@@ -18,8 +18,6 @@ jobs:
      executor: default
      steps:
       - checkout
-      - attach_workspace:
-        at: ./vuetask3/
       - run:
           working_directory: vuetask3/
           command: npm run test:unit
