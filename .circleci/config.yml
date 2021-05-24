@@ -13,10 +13,7 @@ jobs:
       - run: 
           working_directory: vuetask3/
           command: npm install
-      -persist_to_workspace:
-        root: ~/repo/vuetask3/
-        paths:
-          - node_modules
+
   test:
      executor: default
      steps:
