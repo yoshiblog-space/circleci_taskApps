@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils'
 import AddTodo from "@/components/AddTodo.vue";
-//テスト
+
 test('入力データの確認', async()=>{
   const wrapper = mount(AddTodo)
   const textInput = wrapper.find('input')
