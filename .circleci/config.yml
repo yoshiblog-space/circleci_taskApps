@@ -2,7 +2,6 @@ executors:
   default:
     docker:
       - image: cimg/node:lts
-    # working_directory: ~/project/vuetask3/
 
 version: 2.1
 jobs:
