@@ -2,7 +2,7 @@ executors:
   default:
     docker:
       - image: cimg/node:lts
-    working_directory: ~/project/vuetask3/
+    # working_directory: ~/project/vuetask3/
 
 version: 2.1
 jobs:
@@ -11,10 +11,10 @@ jobs:
     steps:
       - checkout
       - run: 
-          # working_directory: vuetask3/
+          working_directory: vuetask3
           command: npm install
       - persist_to_workspace:
-          root: .
+          root: ./vuetask3/
           paths:
             - node_modules
 
