@@ -2,7 +2,7 @@ import { shallowMount, createLocalVue } from '@vue/test-utils'
 import todoFilter from "@/components/TodoFilter";
 import displayTable from "@/components/DisplayTable";
 import addTodo from "@/components/AddTodo";
-import Apps from "@/app.vue";
+import Apps from "@/App.vue";
 import Vuex from 'vuex'
 const localVue = createLocalVue()
 localVue.use(Vuex)
