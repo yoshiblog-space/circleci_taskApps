@@ -131,17 +131,5 @@ test('変更ボタンの確認', async () => {
   const buttonsNo2 = tr.at(2).findAll('button');
   await buttonsNo2.at(0).trigger('click');  //statusボタンクリック
   expect(actions.doChangeTodoState).toHaveBeenCalled();
-  
-  expect(td0.at(0).text()).toBe('0');
-  expect(td0.at(1).text()).toBe('コメント１');
-  expect(td0.at(2).text()).toBe('完了');
-  expect(td0.at(3).text()).toBe('削除');
-  expect(td1.at(0).text()).toBe('1');
-  expect(td1.at(1).text()).toBe('コメント２');
-  expect(td1.at(2).text()).toBe('作業中');
-  expect(td1.at(3).text()).toBe('削除');
-  expect(td2.at(0).text()).toBe('2');
-  expect(td2.at(1).text()).toBe('コメント３');
-  expect(td2.at(2).text()).toBe('完了');
-  expect(td2.at(3).text()).toBe('削除');
+
 })

@@ -1,0 +1,46 @@
+executors:
+  default:
+    docker:
+      - image: cimg/node:lts
+
+version: 2.1
+jobs:
+  setup:
+    executor: default
+    steps:
+      - checkout
+      - run: 
+          working_directory: vuetask3
+          command: npm install
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+
+  test:
+     executor: default
+     steps:
+      - checkout
+      - attach_workspace:
+         at: .
+      - run:
+           working_directory: vuetask3
+           command: npm run test:unit
+
+
+workflows:
+  version: 2.1
+  build_test:
+    jobs:
+      - setup:
+         filters:  # 正規表現フィルターを使用すると、ブランチ全体が一致する必要があります
+            branches:
+              only:  # 以下の正規表現フィルターに一致するブランチのみが実行されます
+                - develop
+      - test:
+          filters:  # 正規表現フィルターを使用すると、ブランチ全体が一致する必要があります
+           branches:
+            only:  # 以下の正規表現フィルターに一致するブランチのみが実行されます
+              - develop
+          requires:
+            - setup
